@@ -13,6 +13,7 @@
     "w3c": "gulp validateW3C --silent",
     "bemlinter": "gulp lintingBem --silent",
     "test": "npm run editorconfig & npm run stylelint & eslint src/js/",
+    "img": "gulp optimizeImage",
     "build": "gulp build",
     "dev": "gulp dev",
     "preview": "gulp preview"
