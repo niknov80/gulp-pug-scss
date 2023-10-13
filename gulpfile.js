@@ -44,7 +44,7 @@ const lintingBem = lintBem;
 const optimizeImage = images;
 
 const dev = gulp.series(clean, fontTask, pug, copyImage, svg, sprite, styles, compileMainScripts, compileVendorScripts, gulp.parallel(Watcher, server));
-const preview = gulp.series(clean, fontTask, pug, images, svg, sprite, styles, compileMainMinScripts, compileVendorScripts, server);
+const preview = gulp.series(clean, fontTask, pug, images, svg, sprite, styles, compileMainMinScripts, compileVendorScripts, gulp.parallel(Watcher, server));
 const build = gulp.series(clean, fontTask, pug, images, svg, sprite, styles, compileMainMinScripts, compileVendorScripts);
 
 export { dev, preview, build, convertOtfToTtf, validateW3C, lintingBem, optimizeImage }
