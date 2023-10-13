@@ -26,6 +26,7 @@ import { compileMainMinScripts, compileMainScripts, compileVendorScripts } from 
 import { validateMarkup } from "./gulp/tasks/w3c.js";
 import { lintBem } from "./gulp/tasks/bem.js";
 import {deployToGithub} from "./gulp/tasks/deploy.js";
+import { favicon } from "./gulp/tasks/favicon.js";
 
 // Наблюдатель за изменениями в файлах
 function Watcher() {
@@ -46,7 +47,7 @@ const optimizeImage = images;
 const deploy = deployToGithub;
 
 const dev = gulp.series(clean, fontTask, pug, copyImage, svg, sprite, styles, compileMainScripts, compileVendorScripts, gulp.parallel(Watcher, server));
-const preview = gulp.series(clean, fontTask, pug, images, svg, sprite, styles, compileMainMinScripts, compileVendorScripts, gulp.parallel(Watcher, server));
-const build = gulp.series(clean, fontTask, pug, images, svg, sprite, styles, compileMainMinScripts, compileVendorScripts);
+const preview = gulp.series(clean, fontTask, pug, images, svg, sprite, favicon, styles, compileMainMinScripts, compileVendorScripts, gulp.parallel(Watcher, server));
+const build = gulp.series(clean, fontTask, pug, images, svg, sprite, favicon, styles, compileMainMinScripts, compileVendorScripts);
 
 export { dev, preview, build, deploy, convertOtfToTtf, validateW3C, lintingBem, optimizeImage }
