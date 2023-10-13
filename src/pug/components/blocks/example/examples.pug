@@ -1,5 +1,7 @@
-include ../../mixins/image
-include image-data
+include ../../mixins/image.pug
+include ../../mixins/promo-video.pug
+include image-data.pug
+include promo-video-data.pug
 
 section.examples
   .container
@@ -29,3 +31,6 @@ section.examples
         desktopSrcWebp: image_data.image.desktop.srcWebp,
         desktopSrc2xWebp: image_data.image.desktop.src2xWebp,
       })
+    .examples__promo-video
+      h3 Миксин promo-video
+      +promo-video(video_data)(class="video__promo")
