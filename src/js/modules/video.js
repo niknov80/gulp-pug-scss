@@ -1,5 +1,5 @@
 export const initVideo = () => {
-  let videos = document.querySelectorAll('.promo-video');
+  let videos = document.querySelectorAll('div[data-video]');
 
   for (let i = 0; i < videos.length; i++) {
     setupVideo(videos[i]);

@@ -3,6 +3,7 @@ import {initModals} from './modules/modals/init-modals';
 import {initVideo} from './modules/video';
 import {Form} from './modules/form-validate/form.js';
 import {sliderInit} from './modules/slider.js';
+import {isWebP} from './utils/webp.js';
 
 // ---------------------------------
 
@@ -12,6 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
+  isWebP();
+
   // Modules
   // ---------------------------------
   initVideo();
@@ -21,10 +24,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   window.addEventListener('load', () => {
-    initModals();
     const form = new Form();
     window.form = form;
     form.init();
+    initModals();
   });
 });
 
